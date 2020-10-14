@@ -129,5 +129,6 @@ public class MyLinkedListTest {
 				&& myLinkedList.tail.equals(myFourthNode);
 		Assert.assertTrue(result);
 		myLinkedList.printMyNodes();
+		myLinkedList.size();
 	}
 }
