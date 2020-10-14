@@ -81,4 +81,18 @@ public class MyLinkedListTest {
 		Assert.assertTrue(result);
 		myLinkedList.printMyNodes();
 	}
+	
+	@Test
+	public void givenANumber_WhenPresent_ShouldReturnTrue() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		boolean result =myLinkedList.search(30);
+		Assert.assertTrue(result);
+		myLinkedList.printMyNodes();
+	}
 }
