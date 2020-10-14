@@ -112,4 +112,22 @@ public class MyLinkedListTest {
 		Assert.assertTrue(result);
 		myLinkedList.printMyNodes();
 	}
+	
+	@Test
+	public void givenANumbers_WhenRemovedFromList_ShouldBeDeleted() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myFourthNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myFourthNode);
+		myLinkedList.remove(40);
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myFourthNode);
+		Assert.assertTrue(result);
+		myLinkedList.printMyNodes();
+	}
 }
