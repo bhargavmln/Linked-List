@@ -91,7 +91,24 @@ public class MyLinkedListTest {
 		myLinkedList.add(myFirstNode);
 		myLinkedList.append(mySecondNode);
 		myLinkedList.append(myThirdNode);
-		boolean result =myLinkedList.search(30);
+		boolean result =myLinkedList.search(30).equals(mySecondNode);
+		Assert.assertTrue(result);
+		myLinkedList.printMyNodes();
+	}
+	
+	@Test
+	public void givenANumbers_WhenAddedToList_ShouldBeAddedAfterANumber() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myFourthNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myFourthNode);
+		myLinkedList.insertAfter(myThirdNode, 30);
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myFourthNode);
 		Assert.assertTrue(result);
 		myLinkedList.printMyNodes();
 	}

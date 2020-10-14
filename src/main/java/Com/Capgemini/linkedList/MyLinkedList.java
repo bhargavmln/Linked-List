@@ -56,17 +56,22 @@ public class MyLinkedList {
 		return tempNode;
 	}
 	
-	public <K> boolean search(K key) {
+	public <K> INode search(K key) {
 		INode tempNode = head;
-		boolean check = false;
 		while(!tempNode.equals(null)) {
 			if(tempNode.getKey().equals(key)) {
-				check = true;
 				break;
 			}
 			tempNode = tempNode.getNext();
 		}
-		return check;
+		return tempNode;
+	}
+	
+	public <K> void insertAfter(INode newNode, K key) {
+		INode myNode = search(key);
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
 	}
 	
 	public void printMyNodes() {
