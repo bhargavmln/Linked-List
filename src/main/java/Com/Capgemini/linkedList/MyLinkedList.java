@@ -84,15 +84,14 @@ public class MyLinkedList {
 		return tempNode.getNext();
 	}
 
-	public void size() {
+	public int size() {
 		int count = 1;
 		INode tempNode = head;
 		while (tempNode.getNext()!= null) {
 			tempNode = tempNode.getNext();
 			count++;
 		}
-		 System.out.println(count);
-
+		return count;
 	}
 
 	public void printMyNodes() {
